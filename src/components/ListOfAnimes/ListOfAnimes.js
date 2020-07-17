@@ -4,6 +4,7 @@ import React, {
 	Fragment,
 } from 'react';
 import { Anime } from '../Anime/Anime';
+import { Charging } from '../Charging/Charging';
 import { List, Anchor, Title } from './style';
 
 function useAnimeData() {
@@ -40,7 +41,7 @@ function useAnimeData() {
 			})
 			.catch((error) => console.error());
 
-		fetch(`${URL}${7}`)
+		fetch(`${URL}${8}`)
 			.then((data) => data.json())
 			.then((res) => {
 				setAnimeFour(res);
@@ -72,7 +73,7 @@ export const ListOfAnimes = () => {
 			<Title>Series de Anime</Title>
 			<List>
 				{loading ? (
-					<h1>Cargando...</h1>
+					<Charging />
 				) : (
 					arr.map((arr) => (
 						<li key={arr.mal_id}>

@@ -1,6 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, {
+	useState,
+	useEffect,
+	Fragment,
+} from 'react';
 import { Serie } from '../Serie/Serie';
 import { List, Anchor, Title } from './style';
+import { Charging } from '../Charging/Charging';
 
 function useSerieData() {
 	const [serieOne, setSerieOne] = useState([]);
@@ -68,7 +73,7 @@ export const ListOfSeries = () => {
 			<Title>Series de Manga</Title>
 			<List>
 				{loading ? (
-					<h1>Cargando...</h1>
+					<Charging />
 				) : (
 					arr.map((arr) => (
 						<li key={arr.mal_id}>
