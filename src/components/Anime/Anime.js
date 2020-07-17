@@ -8,15 +8,15 @@ import {
 	Span,
 } from './style';
 const DEFAULT_IMAGE =
-	'https://cdn.myanimelist.net/images/manga/2/22943.jpg';
+	'https://cdn.myanimelist.net/images/anime/1439/93480.jpg';
 
-export const Serie = ({
+export const Anime = ({
 	cover = DEFAULT_IMAGE,
 	title = 'Sin title',
 	title_japanese = 'Sin title',
 	type = 'Sin typo',
-	volumes = null,
-	chapters = null,
+	episodes = null,
+	duration = null,
 	score = null,
 	popularity = null,
 	status = 'Sin status',
@@ -32,10 +32,10 @@ export const Serie = ({
 						<Span>Tipo:</Span>  {type ? type : 'sin dato'}
 					</Subtitle>
 					<Subtitle>
-						<Span>Volumen:</Span> {volumes ? volumes : 'sin dato'}
+						<Span>Episodes:</Span> {episodes ? episodes : 'sin dato'}
 					</Subtitle>
 					<Subtitle>
-						<Span> Capitulos:</Span> {chapters ? chapters : 'sin dato'}
+						<Span> Duración:</Span> {duration ? duration : 'sin dato'}
 					</Subtitle>
 					<Subtitle>
 						<Span>Score:</Span> {score ? score : 'sin dato'}

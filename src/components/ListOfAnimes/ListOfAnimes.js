@@ -1,71 +1,75 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import { Serie } from '../Serie/Serie';
+import React, {
+	useState,
+	useEffect,
+	Fragment,
+} from 'react';
+import { Anime } from '../Anime/Anime';
 import { List, Anchor, Title } from './style';
 
-function useSerieData() {
-	const [serieOne, setSerieOne] = useState([]);
-	const [serieTwo, setSerieTwo] = useState([]);
-	const [serieThree, setSerieThree] = useState([]);
-	const [serieFour, setSerieFour] = useState([]);
+function useAnimeData() {
+	const [animeOne, setAnimeOne] = useState([]);
+	const [animeTwo, setAnimeTwo] = useState([]);
+	const [animeThree, setAnimeThree] = useState([]);
+	const [animeFour, setAnimeFour] = useState([]);
 	const [loading, setLoading] = useState(false);
-	const URL = 'http://api.jikan.moe/v3/manga/';
+	const URL = 'https://api.jikan.moe/v3/anime/';
 
 	useEffect(function () {
 		setLoading(true);
 		fetch(`${URL}${1}`)
 			.then((data) => data.json())
 			.then((res) => {
-				setSerieOne(res);
+				setAnimeOne(res);
 				setLoading(false);
 			})
 			.catch((error) => console.error());
 
-		fetch(`${URL}${2}`)
+		fetch(`${URL}${5}`)
 			.then((data) => data.json())
 			.then((res) => {
-				setSerieTwo(res);
+				setAnimeTwo(res);
 				setLoading(false);
 			})
 			.catch((error) => console.error());
 
-		fetch(`${URL}${3}`)
+		fetch(`${URL}${6}`)
 			.then((data) => data.json())
 			.then((res) => {
-				setSerieThree(res);
+				setAnimeThree(res);
 				setLoading(false);
 			})
 			.catch((error) => console.error());
 
-		fetch(`${URL}${4}`)
+		fetch(`${URL}${7}`)
 			.then((data) => data.json())
 			.then((res) => {
-				setSerieFour(res);
+				setAnimeFour(res);
 				setLoading(false);
 			})
 			.catch((error) => console.error());
 	}, []);
 	return {
-		serieOne,
-		serieTwo,
-		serieThree,
-		serieFour,
+		animeOne,
+		animeTwo,
+		animeThree,
+		animeFour,
 		loading,
 	};
 }
 
-export const ListOfSeries = () => {
+export const ListOfAnimes = () => {
 	const {
-		serieOne,
-		serieTwo,
-		serieThree,
-		serieFour,
+		animeOne,
+		animeTwo,
+		animeThree,
+		animeFour,
 		loading,
-	} = useSerieData();
+	} = useAnimeData();
 	const arr = [];
-	arr.push(serieOne, serieTwo, serieThree, serieFour);
+	arr.push(animeOne, animeTwo, animeThree, animeFour);
 	return (
 		<Fragment>
-			<Title>Series de Manga</Title>
+			<Title>Series de Anime</Title>
 			<List>
 				{loading ? (
 					<h1>Cargando...</h1>
@@ -73,7 +77,7 @@ export const ListOfSeries = () => {
 					arr.map((arr) => (
 						<li key={arr.mal_id}>
 							<Anchor to='#'>
-								<Serie {...arr} cover={arr.image_url} />
+								<Anime {...arr} cover={arr.image_url} />
 							</Anchor>
 						</li>
 					))

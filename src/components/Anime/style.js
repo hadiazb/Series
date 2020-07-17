@@ -4,7 +4,7 @@ export const Container = styled.div`
   max-width: 550px;
   min-width: 270px;
   margin: 3px auto;
-  height:220px;
+  height:250px;
   display: flex;
   justify-content: space-between;
   align-items: center;

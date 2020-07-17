@@ -3,6 +3,7 @@ import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { Search } from '../../components/Search/Search';
 import { ListOfSeries } from '../../components/ListOfSeries/ListOfSeries';
+import { ListOfAnimes } from '../../components/ListOfAnimes/ListOfAnimes'
 
 export const Home = () => {
 	return (
@@ -10,6 +11,7 @@ export const Home = () => {
 			<Header />
 			<Search />
 			<ListOfSeries/>
+			<ListOfAnimes/>
 			<Footer />
 		</Fragment>
 	);
