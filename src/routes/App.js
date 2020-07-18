@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-	BrowserRouter,
+	BrowserRouter as Router,
 	Switch,
 	Route,
 } from 'react-router-dom';
@@ -12,15 +12,15 @@ import { Registro } from '../containers/Registro/Registro';
 
 export const App = () => {
 	return (
-		<BrowserRouter>
+		<Router>
 			<GlobalStyle />
 			<Layout>
 				<Switch>
+					<Route exact path='/register' component={Registro} />
 					<Route exact path='/' component={Home} />
-					<Route exact path='/login' component={Registro} />
-					<Route component={NotFound} />
+					<Route component={NotFound}  path='/*'/>;
 				</Switch>
 			</Layout>
-		</BrowserRouter>
+		</Router>
 	);
 };

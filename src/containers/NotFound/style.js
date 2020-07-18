@@ -5,7 +5,7 @@ export const Box = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://c.wallhere.com/photos/c9/ac/anime_anime_girls_black_background-1659645.jpg!d');
+  background-image: url('https://www.xtrafondos.com/descargar.php?id=3721&resolucion=3840x2160');
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
